@@ -6,14 +6,11 @@ The photographs will provide a visual record of the hardware configuration and a
 
 Planned Photographs
 
-* HP ProDesk 400 G6 Mini — external views.
 * Internal chassis and motherboard.
 * Intel Core i5-10500T processor and cooling assembly.
 * Installed RAM modules.
 * 256GB NVMe primary SSD.
 * 120GB Kingston SSDNow 300 SATA secondary SSD.
-* 512GB external NVMe SSD and USB-C enclosure.
-* Completed internal hardware configuration.
 
 Photo Documentation
 
