@@ -67,29 +67,33 @@ Project Stages
 Stage 1 – Hardware Preparation
 
 * [x]	Acquire HP ProDesk 400 G6 Mini.
-* [x]	Identify processor and installed memory.
-* [x]	Confirm primary NVMe storage.
+* [x]	Identify Intel Core i5-10500T processor.
+* [x]	Confirm installed memory (16GB DDR4).
+* [x]	Confirm primary 256GB NVMe storage.
 * [x]	Identify existing 2.5-inch drive caddy.
-* [x]	Identify and fit secondary 120GB SATA SSD.
+* [x]	Fit secondary 120GB SATA SSD.
 * [ ]	Install additional Kingston 8GB RAM.
-* [ ]	Verify total system memory.
+* [ ]	Verify final system memory.
 * [ ]	Check storage health.
 
 Stage 2 – BIOS and System Preparation
 
-* [ ]	Inspect BIOS configuration.
-* [ ]	Check Intel virtualisation support.
-* [ ]	Enable VT-x and VT-d where available.
-* [ ]	Check boot configuration.
-* [ ]	Prepare Proxmox installation USB.
+* [x]	Inspect BIOS configuration.
+* [ ]	Verify Intel virtualisation settings (VT-x and VT-d).
+* [x]	Check boot configuration.
+* [x]	Prepare Proxmox installation USB.
 
-Stage 3 – Proxmox Installation
+Stage 3 – Proxmox Installation and Configuration
 
-* [ ]	Download Proxmox VE.
-* [ ]	Install Proxmox onto the primary NVMe SSD.
-* [ ]	Configure network connectivity.
-* [ ]	Access the Proxmox web interface.
-* [ ]	Configure secondary storage.
+* [x]	Download Proxmox VE.
+* [x]	Create bootable USB installer using Rufus.
+* [x]	Install Proxmox VE onto the primary NVMe SSD.
+* [x]	Configure hostname and network settings.
+* [x]	Configure management IP address: 192.168.5.186.
+* [x]	Access the Proxmox web interface.
+* [ ]	Configure the free No-Subscription repository.
+* [ ]	Update Proxmox packages.
+* [ ]	Configure secondary SATA storage.
 
 Stage 4 – Virtual Machine Deployment
 
@@ -97,17 +101,21 @@ Stage 4 – Virtual Machine Deployment
 * [ ]	Deploy Windows virtual machines.
 * [ ]	Configure virtual networking.
 * [ ]	Explore Docker and containers.
+* [ ]	Test virtual machine backups and recovery.
 
 Stage 5 – Cybersecurity Learning
 
 * [ ]	Deploy controlled cybersecurity testing environments.
 * [ ]	Explore network monitoring.
 * [ ]	Practise vulnerability assessment.
-* [ ]	Document security tools and practical exercises.
+* [ ]	Configure and test security tools.
+* [ ]	Document practical exercises and learning outcomes.
 
 Stage 6 – Testing and Documentation
 
-* [ ]	Capture installation and configuration screenshots.
+* [x]	Document initial hardware configuration.
+* [x]	Document Proxmox installation.
+* [ ]	Capture further installation and configuration screenshots.
 * [ ]	Document network architecture.
 * [ ]	Record troubleshooting and solutions.
 * [ ]	Document practical learning outcomes.
@@ -121,11 +129,15 @@ Network isolation and safe configuration will be considered when deploying vulne
 
 Project Status
 
-Current status: Hardware acquired and initial preparation underway.
+Current status: Proxmox VE installed – initial configuration in progress.
 
-Proxmox VE has not yet been installed. The system is currently undergoing hardware preparation ahead of the initial installation.
+Proxmox VE has been successfully installed on the HP ProDesk 400 G6 Mini using the primary 256GB NVMe SSD. The management interface is accessible over the local network at 192.168.5.186:8006.
 
-This repository will be updated throughout the project to document practical work, configuration changes, screenshots, troubleshooting and lessons learned.
+The next phase involves configuring the Proxmox repositories, applying system updates, verifying virtualisation settings and preparing the secondary 120GB SATA SSD for storage.
+
+The project will continue to develop through the deployment of virtual machines, virtual networking and controlled cybersecurity testing environments.
+
+This repository documents the practical setup, configuration decisions, screenshots, troubleshooting and learning outcomes throughout the project.
 
 ⸻
 
