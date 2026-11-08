@@ -1,62 +1,140 @@
-Proxmox VE – Installation and Configuration
+Proxmox VE Installation – HP ProDesk 400 G6 Mini
 
-Overview
+Project: HP ProDesk 400 G6 – Proxmox Cybersecurity Homelab
+Installation date: 8 November 2026
+Status: Proxmox VE successfully installed
 
-This document will record the installation and initial configuration of Proxmox Virtual Environment (VE) on the HP ProDesk 400 G6 Mini.
+1. Overview
 
-The objective is to establish a dedicated virtualisation platform for the IT infrastructure and cybersecurity homelab.
+This document records the installation of Proxmox Virtual Environment (VE) on an HP ProDesk 400 G6 Mini.
 
-System Information
+The objective is to establish a dedicated virtualisation server that will eventually host virtual machines and containers for IT infrastructure, networking and cybersecurity learning.
+
+The installation was completed using a bootable USB installer created with Rufus.
+
+2. Hardware configuration
 
 Component	Specification
-Computer	HP ProDesk 400 G6 Mini
+Manufacturer	HP
+Model	ProDesk 400 G6 Mini
 Processor	Intel Core i5-10500T
-Installed memory	8GB DDR4-3200
-Planned memory	16GB DDR4-3200
+Memory	16GB DDR4 RAM
 Primary storage	256GB NVMe SSD
-Secondary storage	120GB Kingston SATA SSD
-Hypervisor	Proxmox VE
+Secondary storage	120GB SATA SSD
+Network	Integrated Ethernet
 
-Installation Preparation
+3. Installation preparation
 
-The following steps will be completed before installing Proxmox:
+The following steps were completed:
 
-* [ ]	Install additional 8GB Kingston RAM.
-* [ ]	Verify total installed memory.
-* [ ]	Check BIOS configuration.
-* [ ]	Confirm Intel virtualisation support.
-* [ ]	Check internal storage health.
-* [ ]	Download the official Proxmox VE ISO.
-* [ ]	Create a bootable USB installation drive.
+1. Downloaded the Proxmox VE installation ISO.
+2. Downloaded and installed Rufus on a Windows 11 laptop.
+3. Connected a 1TB external USB drive.
+4. Selected the Proxmox ISO in Rufus.
+5. Enabled USB hard drive visibility in Rufus.
+6. Rufus identified the ISO as a hybrid image and enforced DD Image mode.
+7. Created the bootable Proxmox installation media.
 
-Proxmox Installation
+The USB drive was used solely as installation media.
 
-Installation details will be recorded once completed.
+4. BIOS and installation
 
-Item	Details
-Proxmox version	To be confirmed
-Installation date	Pending
-Installation drive	256GB NVMe SSD
-Filesystem	To be confirmed
-Network configuration	To be confirmed
+The HP ProDesk was booted from the USB installation media using the HP startup boot menu.
 
-Initial Configuration
+The graphical Proxmox installer was selected.
 
-The following tasks will be documented after installation:
+The installation configuration was:
 
-* [ ]	Access Proxmox web interface.
-* [ ]	Configure management network.
-* [ ]	Verify system updates.
-* [ ]	Configure secondary SATA storage.
-* [ ]	Review storage allocation.
-* [ ]	Configure backup arrangements.
+Setting	Configuration
+Filesystem	ext4
+Installation disk	256GB NVMe (/dev/nvme0n1)
+Country	United Kingdom
+Timezone	Europe/London
+Keyboard layout	English (UK)
+Administrator	root
+Hostname entered	pve01.homelab.local
 
-Screenshots and Evidence
+The 120GB SATA SSD was not selected as the installation target and is intended for secondary storage.
 
-Screenshots of the installation process, BIOS configuration and Proxmox interface will be added as the project progresses.
+5. Network configuration
 
-Installation Status
+The home network uses an eero 6+ mesh system consisting of two units.
 
-Status: Planned – installation not yet started.
+Initial network investigation identified the following configuration:
 
-This document will be updated throughout the installation and configuration process.
+Setting	Value
+Network gateway	192.168.4.1
+Subnet mask	255.255.252.0
+CIDR	/22
+Proxmox IP address	192.168.5.186
+Proxmox gateway	192.168.4.1
+DNS server	8.8.8.8
+Network interface	nic0
+Connection	Wired Ethernet
+
+The HP ProDesk was identified as a connected device in the eero application.
+
+An IP reservation was created for 192.168.5.186 to maintain a consistent management address.
+
+No port forwarding was configured. Proxmox management is intended to remain accessible through the local network.
+
+6. First boot and management access
+
+Following installation, the HP ProDesk successfully restarted and booted into Proxmox VE.
+
+The server displayed its management address:
+
+https://192.168.5.186:8006
+
+The Proxmox web interface was subsequently accessed from a Windows 11 laptop.
+
+Authentication was completed using the root administrator account and Linux PAM authentication.
+
+A subscription notification was displayed because the installation does not have a paid Proxmox subscription.
+
+This is expected when using the free installation.
+
+7. Installation outcome
+
+Successful installation milestones:
+
+* Proxmox VE installed successfully.
+* Installation completed on the NVMe drive.
+* Wired network connectivity configured.
+* Static management IP address configured and reserved.
+* Proxmox successfully booted.
+* Web management interface accessible.
+* Root administrator login successful.
+
+8. Outstanding configuration
+
+The following tasks remain:
+
+* Configure the free No-Subscription package repository.
+* Refresh package lists and install available updates.
+* Identify and configure the secondary 120GB SATA SSD.
+* Review Proxmox storage configuration.
+* Verify CPU virtualisation settings.
+* Review system resources and memory allocation.
+* Begin creating virtual machines and containers.
+
+9. Learning outcomes
+
+This installation provided practical experience in:
+
+* Creating bootable Linux installation media.
+* Understanding hybrid ISO images and DD image writing.
+* Navigating BIOS and UEFI boot options.
+* Installing a Type 1 hypervisor.
+* Understanding static IP addressing and subnetting.
+* Configuring network gateways and DNS.
+* Creating DHCP reservations through an eero mesh router.
+* Accessing and administering a virtualisation platform through a web interface.
+
+10. Project status
+
+The initial Proxmox installation milestone is complete.
+
+The wider cybersecurity homelab project remains in development. Future stages will focus on virtualisation, storage management, network configuration and the deployment of isolated cybersecurity testing environments.
+
+All testing will be conducted within authorised lab environments.
