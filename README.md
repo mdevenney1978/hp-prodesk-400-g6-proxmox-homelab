@@ -26,9 +26,7 @@ Manufacturer	HP
 Model	ProDesk 400 G6 Mini
 Processor	Intel Core i5-10500T
 CPU	6 cores / 12 threads
-Installed RAM	8GB Samsung DDR4-3200
-RAM upgrade	8GB Kingston DDR4-3200 (on order)
-Planned total RAM	16GB
+Installed RAM	16GB DDR4-3200 (8GB Samsung + 8GB Kingston)
 Primary storage	256GB NVMe SSD
 Secondary storage	120GB Kingston SSDNow 300 SATA SSD
 External storage	512GB NVMe SSD in USB-C enclosure
@@ -39,7 +37,7 @@ The HP ProDesk 400 G6 Mini was purchased second-hand for £126.65, including pos
 
 The machine was supplied with a 256GB NVMe SSD and a Linux installation used by the seller for testing.
 
-An additional Kingston 8GB DDR4-3200 memory module has been ordered to increase the system memory to 16GB.
+The original Samsung 8GB DDR4-3200 module was retained and an additional Kingston 8GB DDR4-3200 module was installed. The system now has 16GB of memory. See [RAM Upgrade](docs/ram-upgrade.md) for the installation and verification record.
 
 A Kingston SSDNow 300 120GB SATA SSD is available for secondary internal storage and has been fitted in the existing 2.5-inch drive caddy.
 
@@ -72,8 +70,8 @@ Stage 1 – Hardware Preparation
 * [x]	Confirm primary 256GB NVMe storage.
 * [x]	Identify existing 2.5-inch drive caddy.
 * [x]	Fit secondary 120GB SATA SSD.
-* [ ]	Install additional Kingston 8GB RAM.
-* [ ]	Verify final system memory.
+* [x]	Install additional Kingston 8GB RAM.
+* [x]	Verify final system memory.
 * [ ]	Check storage health.
 
 Stage 2 – BIOS and System Preparation
@@ -129,11 +127,11 @@ Network isolation and safe configuration will be considered when deploying vulne
 
 Project Status
 
-Current status: Proxmox VE installed – initial configuration in progress.
+Current status: Proxmox VE installed – initial configuration in progress. Hardware memory upgraded to 16GB and verified.
 
 Proxmox VE has been successfully installed on the HP ProDesk 400 G6 Mini using the primary 256GB NVMe SSD. The management interface is accessible over the local network at 192.168.5.186:8006.
 
-The next phase involves configuring the Proxmox repositories, applying system updates, verifying virtualisation settings and preparing the secondary 120GB SATA SSD for storage.
+The 8GB-to-16GB RAM upgrade has been completed and verified. The next phase involves configuring the Proxmox repositories, applying system updates, verifying virtualisation settings and preparing the secondary 120GB SATA SSD for storage.
 
 The project will continue to develop through the deployment of virtual machines, virtual networking and controlled cybersecurity testing environments.
 
