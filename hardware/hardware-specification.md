@@ -8,8 +8,8 @@ This document records the hardware configuration of the Proxmox cybersecurity ho
 - Model: ProDesk 400 G6 Mini
 - Processor: Intel Core i5-10500T
 - Installed memory: 16GB DDR4-3200
-  - DIMM1: Samsung 8GB
-  - DIMM3: Kingston 8GB
+  - DIMM1: Original Samsung 8GB module
+  - DIMM3: Samsung M471A1K43DB1-CWE, 8GB DDR4-3200 SODIMM (PC4-25600S)
 
 ## Storage
 
@@ -19,6 +19,6 @@ This document records the hardware configuration of the Proxmox cybersecurity ho
 
 ## Memory upgrade
 
-The original 8GB Samsung DDR4-3200 module was retained and an additional 8GB Kingston DDR4-3200 module was installed. Both modules were detected by the system.
+The original 8GB Samsung DDR4-3200 module was retained and a second 8GB Samsung module (M471A1K43DB1-CWE, PC4-25600S) was installed. Both modules were detected by the system.
 
 See [RAM Upgrade](../docs/ram-upgrade.md) for the installation record and verification steps.
