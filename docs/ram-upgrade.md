@@ -16,13 +16,13 @@ The upgrade provides additional capacity for running multiple virtual machines a
 
 ## Installed configuration
 
-| Memory slot | Manufacturer | Capacity | Specification |
-|---|---|---:|---|
-| DIMM1 | Samsung | 8GB | DDR4-3200 |
-| DIMM3 | Kingston | 8GB | DDR4-3200 |
-| **Total** | | **16GB** | **DDR4-3200** |
+| Memory slot | Manufacturer | Part number | Capacity | Specification |
+|---|---|---|---:|---|
+| DIMM1 | Samsung | Original module (part number not recorded) | 8GB | DDR4-3200 |
+| DIMM3 | Samsung | M471A1K43DB1-CWE | 8GB | DDR4-3200 SODIMM, PC4-25600S |
+| **Total** | | | **16GB** | **DDR4-3200** |
 
-The original Samsung module was retained and an 8GB Kingston DDR4-3200 module was installed in DIMM3.
+The original Samsung module was retained and a second Samsung 8GB DDR4-3200 SODIMM was installed in DIMM3. The added module is part number **M471A1K43DB1-CWE (PC4-25600S)**.
 
 ## Verification
 
@@ -69,4 +69,3 @@ This upgrade provided practical experience in:
 - Checking memory device information with `dmidecode`.
 - Verifying operating-system memory recognition with `free`.
 - Recording hardware changes and validation results.
-
